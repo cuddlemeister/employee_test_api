@@ -1,0 +1,66 @@
+{
+  "name": "Author",
+  "plural": "Authors",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "first_name": {
+      "type": "string",
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "date_of_birth": {
+      "type": "date",
+      "required": true
+    },
+    "is_female_gender": {
+      "type": "boolean",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "date_created": {
+      "type": "date",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "comments": {
+      "type": "hasMany",
+      "model": "Comment",
+      "foreignKey": ""
+    },
+    "posts": {
+      "type": "hasMany",
+      "model": "Post",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
