@@ -27,6 +27,8 @@ $ npm start
 
 Then, load [http://localhost:3000/explorer/](http://localhost:3000/explorer/) on your browser to view the API explorer.
 
+Base url for your application will be [http://localhost:3000/api/](http://localhost:3000/api/).
+
 This Mock API represents a simple server, where there are authors, posts and comments. Authors can create and comment on their own posts and posts of other authors. 
 
 This API does not require any databases to be attached, all the data has been generated from scratch every time you boot the server. 
