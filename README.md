@@ -34,3 +34,36 @@ This API does not require any databases to be attached, all the data has been ge
 __NOTE: ALL YOUR DATA WILL BE REMOVED EACH TIME YOU REBOOT THE SERVER!__
 
 __Also, you should consider that this is a simplified version of the API, no validation of model creation is provided__
+
+
+## Querying data
+
+Loopback provides methods to retrieve data with filtering. It accepts `Fields`, `Include`, `Limit`, `Skip`, `Order` and `Where` filters. 
+Details about how to use them can be found here https://loopback.io/doc/en/lb3/Where-filter.html
+
+Here's a small example of filter object for Authors: 
+
+```
+{{
+    "where": {
+        "is_female_gender": false,
+        "date_of_birth": {
+            "gt": "1980-01-01T00:00:00.000Z"
+        }
+    },
+    "include": {
+        "relation": "posts",
+        "scope": {
+            "include": {
+                "relation": "comments"
+            }
+        }
+    },
+    "limit": 10,
+    "skip": 0,
+    "order": "date_of_birth ASC"
+}
+
+```
+
+This will include the first 10 (`limit === 10`,` skip === 0`) authors with all their posts and all comments for each post. Only authors born later than `1980-01-01T00: 00: 00.000Z` will be included in it, and all authors will be sorted from oldest to youngest.
