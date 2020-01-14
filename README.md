@@ -44,7 +44,7 @@ Details about how to use them can be found here https://loopback.io/doc/en/lb3/W
 Here's a small example of filter object for Authors: 
 
 ```
-{{
+{
     "where": {
         "is_female_gender": false,
         "date_of_birth": {
