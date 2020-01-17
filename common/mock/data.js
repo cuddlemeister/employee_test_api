@@ -5,13 +5,15 @@ const faker = require('faker');
 const authorsSize = Math.round(Math.random() * 30) + 70;
 const postsSize = authorsSize * 2 + Math.round(Math.random() * 50);
 const commentsSize = postsSize * 2 + Math.round(Math.random() * 50);
-
 const AUTHORS_DATA = new Array(authorsSize)
     .fill(null)
     .map(() => {
+      const gender = Math.round(Math.random());
+      const firstName = faker.name.firstName(gender);
+      const lastName = faker.name.lastName(gender);
       return {
-        'first_name': faker.name.firstName(),
-        'last_name': faker.name.lastName(),
+        'first_name': firstName,
+        'last_name': lastName,
         'address': faker.address.streetAddress(),
         'city': faker.address.city(),
         'country': faker.address.country(),
@@ -19,8 +21,8 @@ const AUTHORS_DATA = new Array(authorsSize)
                 new Date('1940-01-01T08:17:22.334Z'),
                 new Date('2005-01-01T08:17:22.334Z')
             ),
-        'is_female_gender': !!Math.round(Math.random()),
-        'email': faker.internet.email(),
+        'gender': gender === 0 ? 'male' : 'female',
+        'email': faker.internet.email(firstName, lastName),
         'phone': faker.phone.phoneNumber(),
         'date_created': faker.date.between(
                 new Date('2018-01-01T08:17:22.334Z'),

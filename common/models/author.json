@@ -31,8 +31,8 @@
       "type": "date",
       "required": true
     },
-    "is_female_gender": {
-      "type": "boolean",
+    "gender": {
+      "type": "string",
       "required": true
     },
     "email": {
