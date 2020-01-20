@@ -8,7 +8,7 @@
 git clone https://github.com/cuddlemeister/employee_test_api.git
 ```
 
-3.  `cd` to the repository directory and run the following command:
+2.  `cd` to the repository directory and run the following command:
 
 ```
 $ cd employee_test_api
